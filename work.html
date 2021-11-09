@@ -9,62 +9,83 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <section class="header">
         <nav>
-            <div class ="mobileLogo">
-                <a href="index.html"><img src="images/smalllogo.png" alt="Crystal Lee"></a>
+            <div class ="logoCartoon">
+                <a href="index.html"><img src="images/logocartoon.png" alt="Crystal Lee"></a>
             </div>
-            <div class ="boxLogo">
-                <a href="index.html"><img src="images/largelogo.png" alt="Crystal Lee"></a>
+            <div class ="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Crystal Lee"></a>
             </div>
             <div class="nav-links" id="navLinks">
                 <svg class="featherIconX" onclick="hideMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 <ul>
-                    <li><a href="work.html">WORK</a></li>
-                    <li><a href="index.html">ABOUT</a></li>
-                    <li><a href="">ART</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="work.html">work</a></li>
+                        <ul>
+                            <li><a href="">tripease</a></li>
+                            <li><a href="">law buddy</a></li>
+                            <li><a href="">u.s. dept of ed</a></li>
+                            <li><a href="">coral r.a.</a></li>
+                        </ul>
+                    <li><a href="index.html">about</a></li>
+                    <li><a href="">interests</a></li>
+                    <li><a href="">contact</a></li>
                 </ul>
             </div>
                 <svg class="featherIconMenu" onclick="showMenu()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             
-            <section class="mobileTitle">
-                <h2>Work</h2>
-            </section>
         </nav>
+
+        <button id="scrollTopBtn" onclick="topFunction()" title="Go to top">
+            <svg class="upArrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </button>
+
+        <section class="heroImg">
+            <div class="center">
+                <div class="heroContainer">
+                    <h1>Hi! I'm Crystal, <br>a UX Designer</h1>
+                    <h5>I am a thriving beginner that takes on challenges like an expert. I strive to design dynamic solutions that create positive experiences.</h5>
+                    <div class="btnContainer">
+                        <button class="primaryBtn">VIEW WORK</button>
+                        <button class="secondaryBtn">VIEW RESUME</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
 
         <section class="myWorkTitle">
             <div class="contentWork">
-                <h1>MY WORK</h1>
-                <button>DOWNLOAD MY RESUME</button>
+                <h1>Featured Work</h1>
             </div>
         </section>
 
         <section class="myWork">
             <div class="row">
                 <div class="myWorkContainer">
-                    <h1>TRIPEASE</h1>
+                    <h3>Tripease</h3>
                     <h5>UX Case Study</h5>
                     <div class="myWorkImg"><img class="floatingImg" src="images/tripeaseCover.png"></div>
                     <p>Designing a travel app that assists in allowing users to plan trips more effectively with other tripmates</p>
                 </div>
                 <div class="myWorkContainer">
-                    <h1>LAW BUDDY</h1>
+                    <h3>Law Buddy</h3>
                     <h5>UX Case Study</h5>
                     <div class="myWorkImg"><img class="circleImg" src="images/lawbuddyCover.jpeg"></div>
                     <p>Designing a legal assistance app that helps users to decipher legal information into digestable levels</p>
                 </div>
                 <div class="myWorkContainer">
-                    <h1>U.S. DEPT OF ED</h1>
+                    <h3>Ed.gov</h3>
                     <h5>UX/UI Case Study</h5>
                     <div class="myWorkImg"><img class="circleImg" src="images/edGovCover.png"></div>
                     <p>Redesigning the Department of Education website to provide improved hierarchal organization</p>
                 </div>
                 <div class="myWorkContainer">
-                    <h1>CORAL REEF ALLIANCE</h1>
+                    <h3>Coral Reef Alliance</h3>
                     <h5>UX/UI Case Study</h5>
                     <div class="myWorkImg"><img class="floatingImg" src="images/coralCover.png"></div>
                     <p>Redesigning the Coral Reef Alliance website to reflect user’s flow of mind when navigating the site</p>
@@ -76,12 +97,12 @@
 
     
         <section class="footer">
-                <img src="images/largelogo.png" alt="Crystal Lee Logo">
-                <p>Atlanta, GA</p>
-                <p>cyurilee@gmail.com</p>
-                <button>CONTACT ME</button>
-                <p>Crystal Yuri Lee © All Rights Reserved</p>
-        </section>
+            <h4>Let's Connect!</h4>
+            <h6>You can reach me best by emailing me at</h6>
+            <h6 class="footerEmail"> cyurilee@gmail.com</h6>
+            <img src="images/logocartoon.png" alt="Crystal Lee Logo">
+            <p>Crystal Yuri Lee © All Rights Reserved</p>
+</section>
     </section>   
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

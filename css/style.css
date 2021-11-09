@@ -1,34 +1,69 @@
+/*Fonts and Overall Style Settings*/
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  color: #252525;
+  font-family: "Avenir";
 }
-
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Avenir.woff") format("woff"),
+    url("../fonts/Avenir.ttf") format("truetype"),
+    url("../fonts/Avenir.svg#Avenir") format("svg");
+}
+h1 {
+  font-size: 72px;
+}
+h2 {
+  font-size: 64px;
+  padding: 0.5em;
+}
+h3 {
+  font-size: 48px;
+}
+h4 {
+  font-size: 36px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 18px;
+}
+p {
+  font-size: 14px;
+}
+/*Background Image*/
 .header {
-  min-height: 100vh;
   width: 100vw;
-  background-image: url(/images/backgroundlight.png);
-  background-position: center;
+  background-position: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   position: absolute;
 }
 
+/*Logo*/
+.logo img {
+  width: 250px;
+  padding: 25px;
+  margin: 0;
+  display: flex;
+}
+.logoCartoon img {
+  display: none;
+}
+
+/*Navigation*/
 nav {
   display: flex;
-  padding: 2% 6%;
+  padding: 0% 4%;
   justify-content: space-between;
-  align-items: center;
-  position: sticky;
-}
-.boxLogo img {
-  width: 300px;
-  padding: 1% 6%;
-  margin: 0;
-  border-radius: 0%;
-  display: inline-block;
-}
-.mobileLogo img {
-  display: none;
+  position: fixed;
+  background-size: cover;
+  background-image: url(/images/navbackground.png);
+  top: 0;
+  width: 100%;
 }
 nav .mobileTitle {
   display: none;
@@ -36,6 +71,7 @@ nav .mobileTitle {
 .nav-links {
   flex: 2;
   text-align: right;
+  padding: 1% 6%;
 }
 .nav-links ul li {
   display: inline-block;
@@ -44,16 +80,19 @@ nav .mobileTitle {
   position: relative;
 }
 .nav-links ul li a {
-  color: black;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 12px 14px;
 }
 .nav-links ul li a:hover {
-  color: #f1543b;
+  color: #dd724c;
   text-decoration: none;
-  font-size: px;
+  font-size: 24 px;
   font-weight: 600;
   transition: all 0.2s ease-out;
 }
@@ -61,7 +100,7 @@ nav .mobileTitle {
   content: " ";
   width: 0%;
   height: 2px;
-  background: #f1543b;
+  background: #dd724c;
   display: block;
   margin: auto;
   transition: 0.15s;
@@ -69,14 +108,19 @@ nav .mobileTitle {
 .nav-links ul li:hover::after {
   width: 100%;
 }
-
-nav .featherIconMenu {
+.nav-links ul ul {
+  position: absolute;
+  top: 60px;
+  display: none;
+}
+.nav-links ul li:hover > ul nav .featherIconMenu {
   display: none;
 }
 nav .featherIconX {
   display: none;
 }
 
+/*Hero Image*/
 .heroImg {
   display: flex;
   align-items: center;
@@ -84,43 +128,44 @@ nav .featherIconX {
   width: 100%;
   padding-bottom: 200px;
 }
+
+/*Introduction Content*/
 .content img {
   max-width: 100%;
   max-height: 100%;
   display: inline-flex;
   border-radius: 10px;
-  width: 400px;
-  margin: 10px 0px 20px;
+  width: 300px;
   align-items: center;
   text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .content {
   position: relative;
   display: inline;
   margin: 0 auto;
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 10px;
+  padding-top: 200px;
+  padding-bottom: 0px;
   width: 45%;
 }
-.content h1 {
-  font-size: 44px;
-  letter-spacing: 3px;
-  font-weight: 300;
+.content h3 {
+  letter-spacing: 0px;
+  font-weight: 700;
   display: inline-flex;
+  padding-bottom: 10px;
 }
-.content h4 {
-  font-size: 18px;
+.content h5 {
   padding: 10px;
-  font-weight: 400;
-  padding: 20px;
+  font-weight: 500;
+  padding-bottom: 10px;
 }
-.content p {
-  margin: 10px 0px 40px;
-  font-size: 14px;
-  padding: 10px;
+.content h6 {
+  padding: 5px;
   line-height: 32px;
   font-weight: 300;
+  padding-bottom: 20px;
 }
 .content button {
   display: inline-block;
@@ -128,12 +173,12 @@ nav .featherIconX {
   border: 1%;
   border-width: 1px;
   letter-spacing: 1px;
-  padding: 15px 32px;
+  padding: 15px 54px;
   font-size: 12px;
   background: transparent;
   position: relative;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 .content button:hover {
   background-color: black;
@@ -141,14 +186,15 @@ nav .featherIconX {
   color: white;
 }
 
-h2 {
+/*My Story Content*/
+h4 {
   font-size: 24px;
   font-weight: 600;
   width: 60%;
   margin: 0 auto;
   text-align: left;
   padding-top: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   letter-spacing: 2px;
   display: flex;
 }
@@ -156,7 +202,7 @@ h2 {
   width: 100%;
   margin: 0 auto;
   text-align: left;
-  padding-top: 100px;
+  padding-top: 0px;
   padding-bottom: 10px;
 }
 .myStoryContent p {
@@ -165,19 +211,22 @@ h2 {
   width: 60%;
   margin: auto;
   text-align: left;
-  padding-top: 50px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 42px;
   letter-spacing: 0px;
   line-height: 32px;
 }
-.mySkills h2 {
+
+/*My Skills Container*/
+.mySkillsContainer h6 {
   width: 60%;
   margin: 0 auto;
-  text-align: left;
-  padding-top: 100px;
+  text-align: center;
+  padding-top: 20px;
   padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
-
 .row {
   padding-top: 60px;
   padding-bottom: 10px;
@@ -194,7 +243,7 @@ h2 {
   background: white;
   border-radius: 10px;
   margin-bottom: 10%;
-  padding: 0px 20px;
+  padding: 0px 5px;
   box-sizing: border-box;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
@@ -207,28 +256,30 @@ h2 {
   cursor: pointer;
 }
 .mySkillsContainer p {
-  font-size: 12px;
   font-weight: 300;
   line-height: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
   text-align: center;
+  font-size: 12px;
+  padding: 5px 20px;
+  margin-bottom: 15px;
 }
-.mySkillsContainer h4 {
-  font-size: 18px;
+.mySkillsContainer h6 {
   font-weight: 500;
-  line-height: 30px;
-  padding: 10px;
+  line-height: 25px;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .mySkillsContainer img {
   max-width: 100%;
   max-height: 100%;
   width: 44px;
+  margin: 5px 5px;
 }
 
+/*Footer*/
 .footer {
   width: 100%;
   display: inline-block;
@@ -239,23 +290,21 @@ h2 {
   background-color: none;
   vertical-align: top;
 }
-.footer p {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 12px;
-  font-weight: 300;
+.footer h4 {
+  font-weight: 700;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
-.footer button {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px 34px;
-  font-size: 12px;
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  border-radius: 30px;
-  border: 1%;
-  border-width: 1px;
+.footer h6 {
+  font-weight: 400;
+}
+.footerEmail {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.footer p {
+  font-weight: 300;
 }
 .footer button:hover {
   background: black;
@@ -264,34 +313,25 @@ h2 {
 }
 .footer img {
   border-radius: 0%;
-  padding: 0;
-  width: 300px;
-}
-
-@media screen and (max-width: 1000px) {
-  .mySkillsContainer {
-    width: 40%;
-    flex-basis: 100%;
-  }
+  padding: 10px;
+  width: 50px;
 }
 
 @media only screen and (max-width: 600px) {
-  .boxLogo img {
-    display: none;
-  }
-  .mobileLogo img {
-    display: inline-block;
-    width: 50px;
-    padding: 1% 1%;
-    margin: 5px;
-    border-radius: 0%;
-    text-align: left;
+  .logo img {
+    width: 200px;
+    display: flex;
+    padding: 15px;
+    margin-left: 0px;
   }
   .heroImg {
     display: inline-block;
     align-items: center;
     text-align: center;
     width: 100%;
+  }
+  nav {
+    height: 60px;
   }
   .content {
     position: relative;
@@ -325,13 +365,13 @@ h2 {
     border-radius: 10px;
     width: 250px;
     margin: 10px 0px 40px;
-    text-align: center;
   }
-  h2 {
+  h4 {
     font-size: 24px;
     font-weight: 600;
     width: 100%;
     margin-left: 20px;
+    padding: 5px;
   }
   .myStoryContent {
     padding-top: 0px;
@@ -340,9 +380,8 @@ h2 {
     font-size: 14px;
     font-weight: 300;
     width: 90%;
-    margin: 20px;
     text-align: left;
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 10px;
     letter-spacing: 0px;
     line-height: 27px;
@@ -359,7 +398,6 @@ h2 {
     margin-bottom: 10px;
   }
   .mySkillsContainer p {
-    font-size: 12px;
     font-weight: 300;
     padding-bottom: 0px;
     line-height: 22px;
@@ -371,6 +409,7 @@ h2 {
     width: 90%;
     padding: 0px;
     transition: 0.3s;
+    flex-basis: 90%;
   }
   .row {
     flex-direction: row;
@@ -395,14 +434,15 @@ h2 {
   .footer img {
     border-radius: 0%;
     display: inline-block;
-    width: 300px;
+    width: 50px;
     padding: 0;
     margin: 5px;
     text-align: center;
   }
   nav .featherIconMenu {
     display: block;
-    color: black;
+    padding-right: 16px;
+    color: #424242;
     margin: 16px;
     text-align: auto;
     font-size: 22px;

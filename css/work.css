@@ -1,34 +1,68 @@
+/*Fonts and Overall Style Settings*/
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  color: #252525;
+  font-family: "Avenir";
 }
-
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Avenir.woff") format("woff"),
+    url("../fonts/Avenir.ttf") format("truetype"),
+    url("../fonts/Avenir.svg#Avenir") format("svg");
+}
+h1 {
+  font-size: 72px;
+}
+h2 {
+  font-size: 64px;
+  padding: 0.5em;
+}
+h3 {
+  font-size: 48px;
+}
+h4 {
+  font-size: 36px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 18px;
+}
+p {
+  font-size: 14px;
+}
+/*Background Image*/
 .header {
-  min-height: 100vh;
   width: 100vw;
-  background-image: url(/images/backgroundlight.png);
   background-position: center;
   background-size: cover;
   position: absolute;
 }
 
+/*Logo*/
+.logo img {
+  width: 250px;
+  padding: 25px;
+  margin: 0;
+  display: flex;
+}
+.logoCartoon img {
+  display: none;
+}
+
+/*Navigation*/
 nav {
   display: flex;
-  padding: 2% 6%;
+  padding: 0% 4%;
   justify-content: space-between;
-  align-items: center;
-  position: sticky;
-}
-.boxLogo img {
-  width: 300px;
-  padding: 1% 6%;
-  margin: 0;
-  border-radius: 0%;
-  display: inline-block;
-}
-.mobileLogo img {
-  display: none;
+  position: fixed;
+  background-size: cover;
+  background-image: url(/images/navbackground.png);
+  top: 0;
+  width: 100%;
 }
 nav .mobileTitle {
   display: none;
@@ -36,6 +70,7 @@ nav .mobileTitle {
 .nav-links {
   flex: 2;
   text-align: right;
+  padding: 1% 6%;
 }
 .nav-links ul li {
   display: inline-block;
@@ -44,14 +79,17 @@ nav .mobileTitle {
   position: relative;
 }
 .nav-links ul li a {
-  color: black;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 12px 14px;
 }
 .nav-links ul li a:hover {
-  color: #f1543b;
+  color: #dd724c;
   text-decoration: none;
   font-size: 24 px;
   font-weight: 600;
@@ -61,7 +99,7 @@ nav .mobileTitle {
   content: " ";
   width: 0%;
   height: 2px;
-  background: #f1543b;
+  background: #dd724c;
   display: block;
   margin: auto;
   transition: 0.15s;
@@ -69,14 +107,97 @@ nav .mobileTitle {
 .nav-links ul li:hover::after {
   width: 100%;
 }
-
-nav .featherIconMenu {
+.nav-links ul ul {
+  position: absolute;
+  top: 60px;
+  display: none;
+}
+.nav-links ul li:hover > ul nav .featherIconMenu {
   display: none;
 }
 nav .featherIconX {
   display: none;
 }
 
+/*Hero Image*/
+.heroContainer {
+  display: inline-block;
+  align-content: center;
+}
+.center {
+  padding-top: 150px;
+  padding-bottom: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  flex-direction: row;
+  text-align: left;
+  width: 60%;
+}
+.heroContainer h1 {
+  letter-spacing: 0px;
+  font-weight: 700;
+  display: inline-flex;
+  padding-bottom: 10px;
+}
+.heroContainer h5 {
+  font-weight: 400;
+  padding: 10px;
+  padding-bottom: 10px;
+}
+.btnContainer {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.primaryBtn {
+  max-width: 200px;
+  width: 100%;
+  display: inline;
+  text-decoration: none;
+  border: 1%;
+  border-width: 0px;
+  letter-spacing: 1px;
+  padding: 15px;
+  font-size: 12px;
+  background: linear-gradient(#dd724c, #faa56b);
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.primaryBtn:hover {
+  background: #dd724c;
+  transition: 0.3s;
+  color: white;
+}
+
+.secondaryBtn {
+  max-width: 200px;
+  width: 100%;
+  display: inline;
+  text-decoration: none;
+  border: 1%;
+  border-width: 0.5px;
+  letter-spacing: 1px;
+  padding: 15px;
+  font-size: 12px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.secondaryBtn:hover {
+  background-color: black;
+  transition: 0.3s;
+  color: white;
+}
+
+/*Work Container Info*/
 .myWorkTitle {
   position: relative;
   align-items: center;
@@ -91,7 +212,7 @@ nav .featherIconX {
   padding-bottom: 10px;
   text-align: center;
 }
-.contentWork h1 {
+.contentWork h2 {
   font-size: 44px;
   font-weight: 300;
   width: 100%;
@@ -108,19 +229,19 @@ nav .featherIconX {
   border: 1%;
   border-width: 1px;
   letter-spacing: 1px;
-  padding: 15px 32px;
+  padding: 15px 54px;
   font-size: 12px;
   background: transparent;
   position: relative;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 .contentWork button:hover {
   background-color: black;
   transition: 0.3s;
   color: white;
 }
-
+/*Work Container Box*/
 .row {
   padding-top: 50px;
   padding-bottom: 0px;
@@ -201,6 +322,28 @@ nav .featherIconX {
   padding-bottom: 10px;
 }
 
+/*Scroll to Top Button*/
+#scrollTopBtn {
+  background-color: black;
+  border-radius: 50%;
+  text-decoration: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  bottom: 58px;
+  right: 58px;
+  cursor: pointer;
+  border: none;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, white;
+}
+#scrollTopBtn:hover,
+#scrollTopBtn:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/*Footer*/
 .footer {
   width: 100%;
   display: inline-block;
@@ -211,23 +354,19 @@ nav .featherIconX {
   background-color: none;
   vertical-align: top;
 }
-.footer p {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-size: 12px;
-  font-weight: 300;
+.footer h4 {
+  font-weight: 700;
+  padding: 10px;
 }
-.footer button {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px 34px;
-  font-size: 12px;
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  border-radius: 30px;
-  border: 1%;
-  border-width: 1px;
+.footer h6 {
+  font-weight: 400;
+}
+.footerEmail {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.footer p {
+  font-weight: 300;
 }
 .footer button:hover {
   background: black;
@@ -236,11 +375,17 @@ nav .featherIconX {
 }
 .footer img {
   border-radius: 0%;
-  padding: 0;
-  width: 300px;
+  padding: 10px;
+  width: 50px;
 }
 
 @media only screen and (max-width: 600px) {
+  .logo img {
+    width: 200px;
+    display: flex;
+    padding: 15px;
+    margin-left: 0px;
+  }
   .nav-links {
     position: absolute;
     color: white;
@@ -260,7 +405,8 @@ nav .featherIconX {
     display: none;
   }
   nav .featherIconX {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     color: white;
     margin: 27px;
     text-align: right;
@@ -269,22 +415,12 @@ nav .featherIconX {
   }
   nav .featherIconMenu {
     display: block;
-    color: black;
+    padding-right: 16px;
+    color: #424242;
     margin: 16px;
     text-align: auto;
     font-size: 22px;
     cursor: pointer;
-  }
-  .boxLogo img {
-    display: none;
-  }
-  .mobileLogo img {
-    display: inline-block;
-    width: 50px;
-    padding: 1% 1%;
-    margin: 5px;
-    border-radius: 0%;
-    text-align: left;
   }
   nav {
     display: flex;
